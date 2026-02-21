@@ -103,6 +103,17 @@ curl -X POST "http://localhost:3000/api/weather" \
 
 ---
 
+## Future Improvements
+
+- Improve error handling
+- Add request validation
+- Add caching for faster responses
+- Add rate limiting
+- Add API documentation
+- Add automated tests
+- Add Docker support
+- Build a frontend to consume this API
+
 ## Author
 
 Wesley Turio
