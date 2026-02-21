@@ -4,7 +4,6 @@ Simple Weather API built with Node.js, Express, and Axios using the Open-Meteo A
 Allows fetching weather by **city name** or **latitude/longitude**.
 
 ---
-
 ## Tech Stack
 
 * Node.js
@@ -14,7 +13,6 @@ Allows fetching weather by **city name** or **latitude/longitude**.
 * cors
 
 ---
-
 ## Installation
 
 Install dependencies:
@@ -43,7 +41,6 @@ http://localhost:3000
 ```
 
 ---
-
 ## Endpoints
 
 ### GET /api/weather?city=CityName
@@ -57,7 +54,6 @@ curl -H "x-api-key: 123456" "http://localhost:3000/api/weather?city=Porto%20Aleg
 ```
 
 ---
-
 ### GET /api/weather/lat/:lat/lon/:lon
 
 Fetch weather using latitude and longitude.
@@ -69,7 +65,6 @@ curl -H "x-api-key: 123456" "http://localhost:3000/api/weather/lat/-30.03/lon/-5
 ```
 
 ---
-
 ### POST /api/weather
 
 Fetch weather using request body.
@@ -81,7 +76,6 @@ Body:
   "city": "Berlin"
 }
 ```
-
 Example:
 
 ```bash
@@ -90,9 +84,43 @@ curl -X POST "http://localhost:3000/api/weather" \
 -H "x-api-key: 123456" \
 -d '{"city":"Berlin"}'
 ```
-
+Example response:
+```bash
+{
+  "input": {
+    "city": "Berlin"
+  },
+  "location": {
+    "name": "Berlin",
+    "country": "Germany",
+    "latitude": 52.52,
+    "longitude": 13.41
+  },
+  "forecast": {
+    "current": {},
+    "daily": {}
+  }
+}
+```
 ---
-
+Project Structure:
+```bash
+weather-api/
+│
+├── src/
+│   ├── routes/
+│   │   └── weatherRoutes.js
+│   ├── controllers/
+│   │   └── weatherController.js
+│   └── services/
+│       └── weatherService.js
+│
+├── index.js
+├── package.json
+├── .env
+└── README.md
+```
+---
 ## Features
 
 * Fetch weather by city
@@ -112,7 +140,7 @@ curl -X POST "http://localhost:3000/api/weather" \
 - Add API documentation
 - Add automated tests
 - Add Docker support
-- Build a frontend to consume this API
+- Build a frontend to consume this API (react)
 
 ## Author
 
